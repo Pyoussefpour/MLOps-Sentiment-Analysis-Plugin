@@ -1,0 +1,5 @@
+setup.py
+MLops.egg-info/PKG-INFO
+MLops.egg-info/SOURCES.txt
+MLops.egg-info/dependency_links.txt
+MLops.egg-info/top_level.txt

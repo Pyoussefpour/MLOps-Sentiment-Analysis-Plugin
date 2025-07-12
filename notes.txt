@@ -1,0 +1,9 @@
+ML Pipeline
+DVC
+
+1 - Data Ingestion
+2 - Data preprocessing
+3 - Model Building
+4 - Model Evaluation with MLflow
+5 - Model Registration
+    Use Flask to Create the API and create plugin

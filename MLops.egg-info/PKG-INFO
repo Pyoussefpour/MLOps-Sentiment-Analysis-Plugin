@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: MLops
+Version: 0.0.0
+Summary: Youtube comment sentiment analysis
+Author: Parsa YoussefPour
+Author-email: pyoussefpour@gmail.com
+Dynamic: author
+Dynamic: author-email
+Dynamic: summary
