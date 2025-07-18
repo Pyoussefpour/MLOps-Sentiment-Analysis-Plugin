@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "YT Comments Sentiment Analysis",
+  "version": "1.0",
+  "description": "A Chrome extension for interacting with the YT Comments Sentiment Analysis API.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "https://localhost/*",
+    "https://www.googleapis.com/*"
+  ]
+}

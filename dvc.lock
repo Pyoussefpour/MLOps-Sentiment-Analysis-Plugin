@@ -37,3 +37,71 @@ stages:
       md5: 92ae93f0d8e8334e6df7a597558c91e1.dir
       size: 6787342
       nfiles: 2
+  model_building:
+    cmd: python3 src/Model_builder.py
+    deps:
+    - path: data/interim/train_processed.csv
+      hash: md5
+      md5: c5d724bdce7620f3fb83fddf934ab9d8
+      size: 5464246
+    - path: src/Model_builder.py
+      hash: md5
+      md5: d30377205b8fa636c66413728a9d5255
+      size: 4508
+    params:
+      params.yaml:
+        model_builder.learning_rate: 0.09
+        model_builder.max_depth: 20
+        model_builder.max_features: 10000
+        model_builder.n_estimators: 367
+        model_builder.ngram_range:
+        - 1
+        - 3
+    outs:
+    - path: lgbm_model.pkl
+      hash: md5
+      md5: 171e1b35684ce9f32b60affcc41edc42
+      size: 4149618
+    - path: tfidf_vectorizer.pkl
+      hash: md5
+      md5: f3fc9932656f2cb8c0b9a5b5ed0928d6
+      size: 385227
+  model_evaluation:
+    cmd: python3 src/model_eval.py
+    deps:
+    - path: data/interim/test_processed.csv
+      hash: md5
+      md5: 87d1c854aadd65e6a3767b42087c3df1
+      size: 1323096
+    - path: lgbm_model.pkl
+      hash: md5
+      md5: 171e1b35684ce9f32b60affcc41edc42
+      size: 4149618
+    - path: src/model_eval.py
+      hash: md5
+      md5: 3bf60a9cb510205845020f7a2c9f967b
+      size: 6362
+    - path: tfidf_vectorizer.pkl
+      hash: md5
+      md5: f3fc9932656f2cb8c0b9a5b5ed0928d6
+      size: 385227
+    outs:
+    - path: confusion_matrix.png
+      hash: md5
+      md5: 584b661adf2d2a3190aaddacda8b311c
+      size: 16627
+    - path: experiment_info.json
+      hash: md5
+      md5: dcb921912cabccb1529a4be03091e24b
+      size: 168
+  model_registration:
+    cmd: python3 src/register_model.py
+    deps:
+    - path: experiment_info.json
+      hash: md5
+      md5: dcb921912cabccb1529a4be03091e24b
+      size: 168
+    - path: src/register_model.py
+      hash: md5
+      md5: 39583aa829dddbf2b62eb5c4da809ab6
+      size: 2009

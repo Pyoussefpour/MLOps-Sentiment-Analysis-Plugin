@@ -7,6 +7,7 @@ __pycache__/
 *.so
 data/*
 # Distribution / packaging
+.env
 .Python
 build/
 develop-eggs/
@@ -170,3 +171,6 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 /experiment_info.json
+/lgbm_model.pkl
+/tfidf_vectorizer.pkl
+/confusion_matrix.png
